@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Olimpia</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+</head>
+<body>
+
+<div th:insert="navbar :: navbar">  </div>
+</br>
+<div class="container my-2">
+    <h1>Administrative Employees List</h1>
+
+    <a th:href = "@{/showNewAdministrativeEmployeeForm}" class="btn btn-primary btn-sm mb-3"> Add Administrative Employee </a>
+
+    <table border="1" class = "table table-striped table-responsive-md">
+
+        <thead>
+        <tr>
+            <td>Name</td>
+            <td>Surname</td>
+            <td>Email</td>
+            <td>Address</td>
+            <td>PESEL</td>
+            <td>Salary</td>
+            <td>Mobile</td>
+<!--            <td>Birth</td>-->
+            <td>Tax Relief</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="administrativeemployee : ${administrativeemployees}">
+            <td th:text="${administrativeemployee.name}"></td>
+            <td th:text="${administrativeemployee.surname}"></td>
+            <td th:text="${administrativeemployee.email}"></td>
+            <td th:text="${administrativeemployee.address}"></td>
+            <td th:text="${administrativeemployee.pesel}"></td>
+            <td th:text="${administrativeemployee.salary}"></td>
+            <td th:text="${administrativeemployee.phoneNo}"></td>
+<!--            <td th:text="${#strings.substring(administrativeemployee.birthDate,0,11)}"></td>-->
+            <td th:text="${administrativeemployee.isPolishDealRelief}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Olimpia</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+</head>
+<body>
+
+<div th:insert="navbar :: navbar">  </div>
+</br>
+<div class="container my-2">
+    <h1>Our Activities</h1>
+
+    <table border="1" class = "table table-striped table-responsive-md">
+        <thead>
+        <tr>
+
+            <th>Sport</th>
+            <th>Level</th>
+            <th>Min. Participants</td>
+            <th>Max Patricipants</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="activity : ${activities}">
+            <td th:text="${activity.specialization}"></td>
+            <td th:text="${activity.type}"></td>
+            <td th:text="${activity.minParticipants}"></td>
+            <td th:text="${activity.maxParticipants}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+</body>
+</html>
+

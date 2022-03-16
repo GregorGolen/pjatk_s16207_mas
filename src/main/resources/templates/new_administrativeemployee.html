@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Employee Management System</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.css}"/>
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}"/>
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+</head>
+<body>
+
+<div th:insert="navbar :: navbar">  </div>
+</br>
+<div class="container">
+    <h1>Olimia's Employees</h1>
+    <hr>
+    <h2>Hire Employee</h2>
+
+    <form action="#" th:action="@{/saveAdministrativeEmployee}" th:object="${administrativeemployee}"
+          method="POST">
+        <input type="text" th:field="*{name}"
+               placeholder="Name" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{surname}"
+               placeholder="Surname" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{email}"
+               placeholder="Email" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{pesel}"
+               placeholder="PESEL" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{salary}"
+               placeholder="Salary" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{phoneNo}"
+               placeholder="Mobile" class="form-control mb-4 col-4">
+
+       <!-- <div class="form-group row">
+            <div class="col-md-4 mt-5">
+                <label for="birthdate">Date of birth</label>
+                <div class="input-group date">
+                    <input type="text" class="form-control" id="birthdate" autocomplete="off" th:field="*{birthDate}"/>
+                    <div class="input-group-append">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+
+        <td th:text="${administrativeemployee.isPolishDealRelief}"></td>
+
+        <button type="submit" class="btn btn-info col-2">Hire Employee</button>
+    </form>
+
+<!--    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
+<!--    <script th:src="@{assets/bootstrap-datepicker/js/bootstrap-datepicker.js}"></script>-->
+
+<!--    <script>
+        $('.input-group.date').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+    </script>-->
+    <hr>
+
+    <a th:href = "@{andministativeemployees}"> Back to Employees List</a>
+</div>
+</body>
+</html>
+

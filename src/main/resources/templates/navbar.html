@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NavigationBar</title>
+
+</head>
+<body>
+
+<nav th:fragment="navbar" class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+        <img src="../static/images/logo.png" width="335" th:src="@{images/logo.png}"/>
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/}">Olimpia</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a class="nav-link" th:href="@{/administrativeemployees}">Our Employees</a></li>
+
+            <li><a class="nav-link" th:href="@{/locations}">Our Locations</a></li>
+
+            <li><a class="nav-link" th:href="@{/activities}">Sports</a></li>
+
+            <li><a class="nav-link" th:href="@{/equipments}">Equipments</a></li>
+
+            <li><a class="nav-link" th:href="@{/offers}">Offers</a></li>
+        </ul>
+    </div>
+</nav>
+
+</body>
+</html>

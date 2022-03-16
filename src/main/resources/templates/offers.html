@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Olimpia</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+</head>
+<body>
+
+<div th:insert="navbar :: navbar">  </div>
+</br>
+<div class="container my-2">
+    <h1>Offers</h1>
+
+    <table border="1" class = "table table-striped table-responsive-md">
+        <thead>
+        <tr>
+
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Start</th>
+            <th>End</th>
+            <th> Actions </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="offer : ${offers}">
+            <td th:text="${offer.name}"></td>
+            <td th:text="${offer.description}"></td>
+            <td th:text="${offer.price}"></td>
+            <td th:text="${offer.startDate}"></td>
+            <td th:text="${offer.endDate}"></td>
+            <td> <a th:href="@{/showFormForUpdate/{id}(id=${offer.id})}" class="btn btn-primary">Update</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</div>
+</body>
+</html>
+
